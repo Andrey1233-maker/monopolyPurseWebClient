@@ -1,15 +1,15 @@
 
 import './App.css';
 import { NotificationModal } from './components/NotificationModal/NotificationModal';
-import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
+import { MainRouting } from './MainRouting'
 
 function App() {
 
-  const n = 'Нет роутингов  '
+  const n = null
 
   return (
     <div className="App">
-      <RegistrationPage/>
+      <MainRouting />
       {n && <NotificationModal message={n}/>}
     </div>
   );
