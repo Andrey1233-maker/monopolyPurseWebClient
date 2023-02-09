@@ -1,0 +1,41 @@
+.header {
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 5px 5px 5px 0 #0000008f;
+
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+    box-sizing: border-box;
+
+
+    border-radius: 5px;
+    border: 1px solid #000000;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.header__bg {
+    background: #a0a0a0;
+    z-index: 1;
+}
+
+.header__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.header__logo {
+    height: 40px;
+}
+
+.header__title {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
