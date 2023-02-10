@@ -1,16 +1,23 @@
 
-import './App.css';
-import { NotificationModal } from './components/NotificationModal/NotificationModal';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { MainRouting } from './MainRouting'
+import { requestGetUserWhoAmIActionCreator } from './redux/actions/actionCreators';
+
+import './App.css';
 
 function App() {
 
-  const n = null
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(requestGetUserWhoAmIActionCreator())
+  }, [dispatch])
 
   return (
     <div className="App">
       <MainRouting />
-      {n && <NotificationModal message={n}/>}
     </div>
   );
 }

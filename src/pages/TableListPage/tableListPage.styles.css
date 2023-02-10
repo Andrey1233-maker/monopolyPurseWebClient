@@ -12,12 +12,6 @@
     box-shadow: 5px 5px 5px 0 #0000008f;
 }
 
-.list__bg {
-    padding: 20px;
-    background: #a0a0a0;
-    flex: 1;
-}
-
 .page {
     display: flex;
     flex-direction: column;

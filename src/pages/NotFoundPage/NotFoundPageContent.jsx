@@ -3,7 +3,7 @@
 export function NotFoundPageContent() {
 
     return (
-        <div>
+        <div class="fragment">
             Страница не найдена 404
         </div>
     )

@@ -1,17 +1,9 @@
 .fragment {
     padding: 20px;
-    margin: 20px;
     background: #ffffff;
     border-radius: 5px;
     border: 1px solid #000000;
     box-shadow: 5px 5px 5px 0 #0000008f;
-}
-
-.fragment__background {
-    background: #a0a0a0;
-    width: 100%;
-    height: 100%;
-    flex: 1;
 }
 
 .fragment__field {
