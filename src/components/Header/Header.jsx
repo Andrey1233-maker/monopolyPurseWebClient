@@ -26,10 +26,14 @@ export function Header() {
 
     const userContent = useMemo(() => {
         if(user) {
+            console.log(user)
             return (
                 <div class="header__user">
-                    <p class="user__name">{user.name}</p>
-                    <p class="user__email">{user.email}</p>
+                    <img src={user.picture} class="header__avatar"/>
+                    <div class="header__user_names">
+                        <p class="user__name">{user.name}</p>
+                        <p class="user__email">{user.email}</p>
+                    </div>
                 </div>
             )
         }

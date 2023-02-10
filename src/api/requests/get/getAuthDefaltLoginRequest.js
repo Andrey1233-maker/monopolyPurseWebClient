@@ -3,7 +3,7 @@ import { getAuthDefaultLoginQueryCreator } from '../../apiCreator'
 
 export async function getAuthDefaultLoginRequest({email, password}) {
     try {
-        const response = (await api.get(getAuthDefaultLoginQueryCreator({email, password})).toPromise()).getAuthDefaultLoginQueryCreator
+        const response = (await api.get(getAuthDefaultLoginQueryCreator({email, password})).toPromise()).data
         if('message' in response) {
             throw new Error(`getAuthDefaultLoginRequest: request failed ¬ ${response.message}`)
         }
