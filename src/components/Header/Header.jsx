@@ -1,14 +1,15 @@
 import { useCallback, useState, useEffect, useMemo } from "react";
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from "react-redux";
 
-import { readToken } from '../../readToken'
 import { BorderButton } from "../BorderButton/BorderButton"
+import { NotificationListBtn } from "../NotificationList/NotificationListBtn" 
+import { userFromuserReducerSelector } from '../../redux/reducers/selectors'
 
 import logo from '../../logo.svg'
 
 import './header.styles.css'
-import { useSelector } from "react-redux";
-import { userFromuserReducerSelector } from '../../redux/reducers/selectors'
+
 
 export function Header() {
 
@@ -29,12 +30,13 @@ export function Header() {
             console.log(user)
             return (
                 <div class="header__user">
+                    <NotificationListBtn />
                     <img src={user.picture} class="header__avatar"/>
                     <div class="header__user_names">
                         <p class="user__name">{user.name}</p>
                         <p class="user__email">{user.email}</p>
                     </div>
-                </div>
+                </div>  
             )
         }
         return (

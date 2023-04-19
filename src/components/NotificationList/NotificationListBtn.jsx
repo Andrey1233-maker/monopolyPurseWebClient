@@ -1,0 +1,33 @@
+
+import { useCallback, useMemo, useState } from 'react'
+
+import { NotificationList } from './NotificationList'
+
+import bell_icon from './Bell.svg'
+
+import './NotificationList.styles.css'
+
+export function NotificationListBtn() {
+
+    const notifications = [{isReaded: false, content: 'qweqwe'}]
+
+    const [formIsOpen, setFormIsOpen] = useState(false)
+
+    const countNewNotifications = useMemo(() => notifications.filter((notification) => {
+        return !notification.isReaded
+    }).length, [notifications])
+
+    const onClickBtn = useCallback(() => {
+        setFormIsOpen(prev => !prev)
+    }, [setFormIsOpen])
+
+    return (
+        <>
+            <div class='notification_btn' onClick={onClickBtn}>
+                <img src={bell_icon} alt='уведомления' class='notification_btn__icon'/>
+                {countNewNotifications > 0 && <div class='notification_btn__new_count'>{countNewNotifications}</div>}
+            </div>
+            {formIsOpen && <NotificationList notifications={notifications}/>}
+        </>
+    )
+}
