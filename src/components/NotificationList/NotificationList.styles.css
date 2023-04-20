@@ -79,3 +79,14 @@
 .item__text {
     margin: 0;
 }
+
+.item__delete_icon {
+    cursor: pointer;
+}
+
+.notification_list__form__close_icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}

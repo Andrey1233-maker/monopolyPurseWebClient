@@ -1,15 +1,20 @@
 
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { NotificationList } from './NotificationList'
 
 import bell_icon from './Bell.svg'
 
 import './NotificationList.styles.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { notificationsFromUserReducerSelector } from '../../redux/reducers/selectors'
+import { requestNotificationsActionCreator } from '../../redux/actions/actionCreators'
 
 export function NotificationListBtn() {
 
-    const notifications = [{isReaded: false, content: 'qweqwe'}]
+    const dispatch = useDispatch()
+
+    const notifications = useSelector(notificationsFromUserReducerSelector)
 
     const [formIsOpen, setFormIsOpen] = useState(false)
 
@@ -21,13 +26,17 @@ export function NotificationListBtn() {
         setFormIsOpen(prev => !prev)
     }, [setFormIsOpen])
 
+    useEffect(() => {
+        dispatch(requestNotificationsActionCreator())
+    }, [dispatch])
+
     return (
         <>
             <div class='notification_btn' onClick={onClickBtn}>
                 <img src={bell_icon} alt='уведомления' class='notification_btn__icon'/>
                 {countNewNotifications > 0 && <div class='notification_btn__new_count'>{countNewNotifications}</div>}
             </div>
-            {formIsOpen && <NotificationList notifications={notifications}/>}
+            {formIsOpen && <NotificationList notifications={notifications} closeForm={onClickBtn}/>}
         </>
     )
 }

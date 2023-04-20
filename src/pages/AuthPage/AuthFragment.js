@@ -27,7 +27,7 @@ export function AuthFragment() {
     }, [emailValue, passwordValue])
 
     const onClickDefaultAuthBtn = useCallback(() => {
-        dispatch(requestGetAuthDefaultLoginActionCreator({emailValue, passwordValue}))
+        dispatch(requestGetAuthDefaultLoginActionCreator(emailValue, passwordValue))
     }, [dispatch, emailValue, passwordValue])
 
     const onClickRegBtn = useCallback(() => {

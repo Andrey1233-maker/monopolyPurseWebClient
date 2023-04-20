@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects'
 
 import { getUserWhoAmIRequest } from '../../../api/requests/get/getUserWhoAmIRequest'
-import { setUserToUserReduceActionCreator } from '../../actions/actionCreators'
+import { setUserToUserReduceActionCreator, setAlertToUserReduxActionCreator } from '../../actions/actionCreators'
 
 export function* workerGetUserWhoAmISaga() {
     try {
@@ -9,6 +9,7 @@ export function* workerGetUserWhoAmISaga() {
         yield put(setUserToUserReduceActionCreator(user))
     }
     catch(e) {
-        console.log(e)
+        yield put(setAlertToUserReduxActionCreator('Ошибка при запросе данных о вас', true))
+
     }
 }

@@ -1,6 +1,7 @@
-import { call } from "redux-saga/effects"
+import { call, put } from "redux-saga/effects"
 import { postAuthDefaultRegReuest } from "../../../api/requests/post/postAuthDefaultRegReuest"
 import { setToken } from "../../../readToken"
+import { setAlertToUserReduxActionCreator } from '../../actions/actionCreators'
 
 export function* workerPostAuthDefaultRegSaga(action) {
     try {
@@ -8,6 +9,6 @@ export function* workerPostAuthDefaultRegSaga(action) {
         yield setToken(token)
     }
     catch(e) {
-        console.log(e)
+        yield put(setAlertToUserReduxActionCreator('Ошибка при запросе данных о вас', true))
     }
 }
