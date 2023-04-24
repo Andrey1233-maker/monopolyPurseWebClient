@@ -19,10 +19,6 @@ function App() {
     dispatch(requestGetUserWhoAmIActionCreator())
   }, [dispatch])
 
-  useEffect(() => {
-    console.log(alert)
-  }, [alert])
-
   return (
     <div className="App">
       <MainRouting user={user}/>

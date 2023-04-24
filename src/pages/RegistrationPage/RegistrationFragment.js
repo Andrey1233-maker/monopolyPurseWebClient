@@ -35,9 +35,11 @@ export function RegistrationFragment() {
     const onClickAuthBtn = useCallback(() => {
         if(!(emailValue?.length && nickNammeValue?.length && passwordValue?.length && passwordRepeatValue?.length)) {
             dispatch(setAlertToUserReduxActionCreator('Поля не должны быть пустыми', true))
+            return
         }
         if(passwordValue !== passwordRepeatValue) {
             dispatch(setAlertToUserReduxActionCreator('Пароли не совпадают', true))
+            return
         }
         dispatch(requestPostAuthDefaultRegActionCreator(emailValue, passwordValue, nickNammeValue))
     }, [emailValue, passwordValue, nickNammeValue, passwordRepeatValue, dispatch])

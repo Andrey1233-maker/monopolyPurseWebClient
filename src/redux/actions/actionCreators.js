@@ -1,4 +1,4 @@
-import { SET_ALERT_TO_USER_REDUCE_ACTION, REQUEST_DELETE_NOTIFICATION_ACTION, REQUEST_GET_AUTH_DAFAULT_LOGIN_ACTION, REQUEST_GET_NOTIFICATIONS_ACTION, REQUEST_GET_USER_WHO_AM_I_ACTION, REQUEST_POST_AUTH_DEFAULT_REG_ACTION, SET_NOTIFICATIONS_TO_USER_REDUCE_ACTION, SET_USER_TO_USER_REDUCE_ACTION } from "./actionTypes";
+import { SET_ALERT_TO_USER_REDUCE_ACTION, REQUEST_DELETE_NOTIFICATION_ACTION, REQUEST_GET_AUTH_DAFAULT_LOGIN_ACTION, REQUEST_GET_NOTIFICATIONS_ACTION, REQUEST_GET_USER_WHO_AM_I_ACTION, REQUEST_POST_AUTH_DEFAULT_REG_ACTION, SET_NOTIFICATIONS_TO_USER_REDUCE_ACTION, SET_USER_TO_USER_REDUCE_ACTION, SET_TABLES_TO_TABLES_REDUCER_ACTION, REQUEST_POST_TABLE_ACTION, REQUEST_GET_TABLES_ACTION } from "./actionTypes";
 
 export function requestGetAuthDefaultLoginActionCreator(email, auth_key) {
     return {
@@ -55,5 +55,27 @@ export function setAlertToUserReduxActionCreator(content, error) {
         type: SET_ALERT_TO_USER_REDUCE_ACTION,
         content,
         error,
+    }
+}
+
+export function setTablesToTableReducerActionCreator(tables) {
+    return {
+        type: SET_TABLES_TO_TABLES_REDUCER_ACTION,
+        tables,
+    }
+}
+
+export function requestPostTableActionCreator(title, description, style) {
+    return {
+        type: REQUEST_POST_TABLE_ACTION,
+        title,
+        description,
+        style,
+    }
+}
+
+export function requestGetTablesActionCreator() {
+    return {
+        type: REQUEST_GET_TABLES_ACTION,
     }
 }

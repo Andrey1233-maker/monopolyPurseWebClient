@@ -9,7 +9,7 @@ export function* workerGetUserWhoAmISaga() {
         yield put(setUserToUserReduceActionCreator(user))
     }
     catch(e) {
-        yield put(setAlertToUserReduxActionCreator('Ошибка при запросе данных о вас', true))
-
+        // yield put(setAlertToUserReduxActionCreator('Ошибка при запросе данных о вас', true))
+        console.log('Токен умер)))')
     }
 }

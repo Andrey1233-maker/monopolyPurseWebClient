@@ -6,6 +6,7 @@ import { TemplatePage } from "./pages/TemplatePage/TemplatePage";
 import { TableListFragment } from "./pages/TableListPage/TableListFragment";
 import { CreateTeamFragment } from "./pages/CreateTeamPage/CreateTeamFragment";
 import { NotFoundPageContent } from "./pages/NotFoundPage/NotFoundPageContent";
+import { TableFragment } from "./pages/TablePage/TableFragment";
 
 export function MainRouting({user}) {
 
@@ -15,10 +16,12 @@ export function MainRouting({user}) {
                 <Route path="/auth" element={<AuthPage />}/>
                 <Route path="/reg" element={<RegistrationPage />}/>
                 <Route path="/token/:token" element={<TokenPage />}/>
+                <Route path="/table/:id" element={<TemplatePage content={<TableFragment />}/>}/>
+
                 {user && <>
                         <Route path="/tables" element={<TemplatePage content={<TableListFragment />} />}/>
                         <Route path="/create" element={<TemplatePage content={<CreateTeamFragment />} />}/>
-                        <Route path="*" element={<TemplatePage content={<NotFoundPageContent/>}/>}/>
+                        <Route path="*" element={<TemplatePage content={<TableListFragment/>}/>}/>
                     </>
                 }
                 <Route path="*" element={<AuthPage/>}/>
