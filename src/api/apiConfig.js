@@ -1,23 +1,22 @@
-import axios from 'axios'
-import { readToken } from '../readToken'
+import axios from "axios";
+import { readToken } from "../readToken";
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000',
-})
+  baseURL: "http://localhost:5000",
+});
 
 api.interceptors.request.use(
-  config => {
-    const token = readToken()
+  (config) => {
+    const token = readToken();
 
     /* eslint-disable */
     if (token) {
-
-      config.headers.Authorization = `Bearer ${token}`
+      config.headers.Authorization = `Bearer ${token}`;
     }
     /* eslint-enable */
-    return config
+    return config;
   },
-  error => Promise.reject(error),
-)
+  (error) => Promise.reject(error)
+);
 
-export default api
+export default api;

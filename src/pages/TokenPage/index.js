@@ -1,3 +1,3 @@
-import TokenPage from './TokenPage'
+import TokenPage from "./TokenPage";
 
-export default TokenPage
+export default TokenPage;

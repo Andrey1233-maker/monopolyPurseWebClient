@@ -1,3 +1,3 @@
-import TablePage from './TablePage'
+import TablePage from "./TablePage";
 
-export default TablePage
+export default TablePage;

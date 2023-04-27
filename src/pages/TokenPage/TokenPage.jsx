@@ -1,22 +1,17 @@
-import { useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import { setToken } from "../../readToken"
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { setToken } from "../../readToken";
 
 export default function TokenPage() {
+  const { token } = useParams();
+  const navigate = useNavigate();
 
-    const { token } = useParams()
-    const navigate = useNavigate()
+  useEffect(() => {
+    if (token) {
+      setToken(token);
+      navigate("/");
+    }
+  });
 
-    useEffect(() => {
-        if(token) {
-            setToken(token)
-            navigate('/')    
-        }
-    })
-    
-    return (
-        <div>
-            Загрузка токена
-        </div>
-    )
-}   
+  return <div>Загрузка токена</div>;
+}

@@ -1,15 +1,13 @@
+import { Header } from "../../components";
+import { NotFoundPageContent } from "./NotFoundPageContent";
 
-import { Header } from '../../components'
-import { NotFoundPageContent } from './NotFoundPageContent'
-
-import './notFoundPage.styles.css'
+import "./notFoundPage.styles.css";
 
 export default function NotFoundPage() {
-
-    return (
-        <div>
-            <Header/>
-            <NotFoundPageContent />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <NotFoundPageContent />
+    </div>
+  );
 }

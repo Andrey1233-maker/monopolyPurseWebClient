@@ -1,3 +1,3 @@
-import TableListPage from './TableListPage'
+import TableListPage from "./TableListPage";
 
-export default TableListPage
+export default TableListPage;

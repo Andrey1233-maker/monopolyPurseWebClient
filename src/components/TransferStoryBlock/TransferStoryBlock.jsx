@@ -1,9 +1,3 @@
-
 export default function TransferStoryBlock() {
-
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }

@@ -1,26 +1,24 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { NotificationModal } from "./components";
+import { MainRouting } from "./MainRouting";
+import { requestGetUserWhoAmIActionCreator } from "./redux/actions/actionCreators";
+import { userAndUserSelector } from "./redux/reducers/selectors";
 
-import { MainRouting } from './MainRouting'
-import { requestGetUserWhoAmIActionCreator } from './redux/actions/actionCreators';
-import { userAndUserSelector } from './redux/reducers/selectors'
-
-import './App.css';
-import { NotificationModal } from './components/NotificationModal/NotificationModal';
+import "./App.css";
 
 function App() {
-
-  const dispatch = useDispatch()
-  const { user, alert } = useSelector(userAndUserSelector)
+  const dispatch = useDispatch();
+  const { user, alert } = useSelector(userAndUserSelector);
 
   useEffect(() => {
-    dispatch(requestGetUserWhoAmIActionCreator())
-  }, [dispatch])
+    dispatch(requestGetUserWhoAmIActionCreator());
+  }, [dispatch]);
 
   return (
     <div className="App">
-      <MainRouting/>
+      <MainRouting />
       {alert && <NotificationModal />}
     </div>
   );

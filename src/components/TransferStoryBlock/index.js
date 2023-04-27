@@ -1,3 +1,3 @@
-import TransferStoryBlock from "./TransferStoryBlock"
+import TransferStoryBlock from "./TransferStoryBlock";
 
-export default TransferStoryBlock
+export default TransferStoryBlock;

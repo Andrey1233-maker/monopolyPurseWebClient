@@ -1,3 +1,3 @@
 import BorderButton from "./BorderButton";
 
-export default BorderButton
+export default BorderButton;

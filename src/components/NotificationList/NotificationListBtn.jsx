@@ -1,42 +1,51 @@
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { NotificationList } from "./NotificationList";
 
-import { NotificationList } from './NotificationList'
+import bell_icon from "./Bell.svg";
 
-import bell_icon from './Bell.svg'
-
-import './NotificationList.styles.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { notificationsFromUserReducerSelector } from '../../redux/reducers/selectors'
-import { requestNotificationsActionCreator } from '../../redux/actions/actionCreators'
+import "./NotificationList.styles.css";
+import { useDispatch, useSelector } from "react-redux";
+import { notificationsFromUserReducerSelector } from "../../redux/reducers/selectors";
+import { requestNotificationsActionCreator } from "../../redux/actions/actionCreators";
 
 export function NotificationListBtn() {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  const notifications = useSelector(notificationsFromUserReducerSelector);
 
-    const notifications = useSelector(notificationsFromUserReducerSelector)
+  const [formIsOpen, setFormIsOpen] = useState(false);
 
-    const [formIsOpen, setFormIsOpen] = useState(false)
+  const countNewNotifications = useMemo(
+    () =>
+      notifications.filter((notification) => {
+        return !notification.isReaded;
+      }).length,
+    [notifications]
+  );
 
-    const countNewNotifications = useMemo(() => notifications.filter((notification) => {
-        return !notification.isReaded
-    }).length, [notifications])
+  const onClickBtn = useCallback(() => {
+    setFormIsOpen((prev) => !prev);
+  }, [setFormIsOpen]);
 
-    const onClickBtn = useCallback(() => {
-        setFormIsOpen(prev => !prev)
-    }, [setFormIsOpen])
+  useEffect(() => {
+    dispatch(requestNotificationsActionCreator());
+  }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(requestNotificationsActionCreator())
-    }, [dispatch])
-
-    return (
-        <>
-            <div class='notification_btn' onClick={onClickBtn}>
-                <img src={bell_icon} alt='уведомления' class='notification_btn__icon'/>
-                {countNewNotifications > 0 && <div class='notification_btn__new_count'>{countNewNotifications}</div>}
-            </div>
-            {formIsOpen && <NotificationList notifications={notifications} closeForm={onClickBtn}/>}
-        </>
-    )
+  return (
+    <>
+      <div class="notification_btn" onClick={onClickBtn}>
+        <img src={bell_icon} alt="уведомления" class="notification_btn__icon" />
+        {countNewNotifications > 0 && (
+          <div class="notification_btn__new_count">{countNewNotifications}</div>
+        )}
+      </div>
+      {formIsOpen && (
+        <NotificationList
+          notifications={notifications}
+          closeForm={onClickBtn}
+        />
+      )}
+    </>
+  );
 }

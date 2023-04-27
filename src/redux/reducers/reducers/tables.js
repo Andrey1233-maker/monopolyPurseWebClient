@@ -1,14 +1,14 @@
 import { SET_TABLES_TO_TABLES_REDUCER_ACTION } from "../../actions/actionTypes";
 
 const initialState = {
-    tables: [],
-}
+  tables: [],
+};
 
 export function tableReducer(state = initialState, action) {
-    switch(action.type) {
-        case SET_TABLES_TO_TABLES_REDUCER_ACTION: 
-            return { ...state, tables: action.tables }
-        default:
-            return state
-    }
+  switch (action.type) {
+    case SET_TABLES_TO_TABLES_REDUCER_ACTION:
+      return { ...state, tables: action.tables };
+    default:
+      return state;
+  }
 }

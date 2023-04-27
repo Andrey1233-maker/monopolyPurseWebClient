@@ -1,3 +1,3 @@
-import TableItem from './TableItem'
+import TableItem from "./TableItem";
 
-export default TableItem
+export default TableItem;

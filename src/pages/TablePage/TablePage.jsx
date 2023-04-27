@@ -1,16 +1,13 @@
-import { Header } from '../../components/Header/Header'
-import { TableFragment } from './TableFragment'
+import { Header } from "../../components/Header/Header";
+import { TableFragment } from "./TableFragment";
 
-import './TablePage.styles.css'
-
+import "./TablePage.styles.css";
 
 export default function TablePage() {
-
-
-    return (
-        <div>
-            <Header />
-            <TableFragment />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <TableFragment />
+    </div>
+  );
 }

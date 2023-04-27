@@ -1,3 +1,3 @@
 import DefaultButton from "../DefaultButton";
 
-export default DefaultButton
+export default DefaultButton;

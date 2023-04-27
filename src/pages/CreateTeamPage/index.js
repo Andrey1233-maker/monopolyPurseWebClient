@@ -1,3 +1,3 @@
-import CreateTeamPage from './CreateTeamPage'
+import CreateTeamPage from "./CreateTeamPage";
 
-export default CreateTeamPage
+export default CreateTeamPage;

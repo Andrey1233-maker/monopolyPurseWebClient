@@ -1,3 +1,3 @@
-import TemlatePage from './TemplatePage'
+import TemlatePage from "./TemplatePage";
 
-export default TemlatePage
+export default TemlatePage;
