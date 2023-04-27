@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 
-import { deleteNotificationRequest } from "../../../api/requests/delete/deleteNotificationRequest";
+import { deleteNotificationRequest } from "../../../api";
 import {
   requestNotificationsActionCreator,
   setAlertToUserReduxActionCreator,

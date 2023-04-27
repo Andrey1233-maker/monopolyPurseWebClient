@@ -1,7 +1,6 @@
-import api from "../../apiConfig";
-import { TABLE_PATH } from "../../apiPath";
+import { TABLE_PATH, api } from "../../";
 
-export async function getTablesRequest() {
+export default async function getTablesRequest() {
   try {
     const response = (await api.get(TABLE_PATH)).data;
     if ("message" in response) {

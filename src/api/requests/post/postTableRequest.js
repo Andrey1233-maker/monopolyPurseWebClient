@@ -1,7 +1,6 @@
-import api from "../../apiConfig";
-import { TABLE_PATH } from "../../apiPath";
+import { TABLE_PATH, api } from "../../";
 
-export async function postTableRequest(action) {
+export default async function postTableRequest(action) {
   try {
     const response = (await api.post(TABLE_PATH, action)).data;
 

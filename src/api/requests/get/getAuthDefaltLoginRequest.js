@@ -1,7 +1,6 @@
-import api from "../../apiConfig";
-import { getAuthDefaultLoginQueryCreator } from "../../apiCreator";
+import { getAuthDefaultLoginQueryCreator, api } from "../../";
 
-export async function getAuthDefaultLoginRequest(action) {
+export default async function getAuthDefaultLoginRequest(action) {
   try {
     const response = (
       await api.get(

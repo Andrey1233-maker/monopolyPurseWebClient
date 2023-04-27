@@ -3,7 +3,7 @@ import { Header, Footer } from "../../components";
 
 import "./TemplatePage.styles.css";
 
-export function TemplatePage() {
+export default function TemplatePage() {
   return (
     <div class="page">
       <Header />

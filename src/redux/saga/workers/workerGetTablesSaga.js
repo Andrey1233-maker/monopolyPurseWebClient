@@ -3,7 +3,7 @@ import {
   setTablesToTableReducerActionCreator,
   setAlertToUserReduxActionCreator,
 } from "../../actions/actionCreators";
-import { getTablesRequest } from "../../../api/requests/get/getTablesRequest";
+import { getTablesRequest } from "../../../api";
 
 export function* workerGetTablesSaga() {
   try {

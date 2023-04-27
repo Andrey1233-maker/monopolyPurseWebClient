@@ -1,7 +1,6 @@
-import api from "../../apiConfig";
-import { NOTIFICATION_PATH } from "../../apiPath";
+import { NOTIFICATION_PATH, api } from "../../";
 
-export async function getNotificationsRequest() {
+export default async function getNotificationsRequest() {
   try {
     const response = (await api.get(NOTIFICATION_PATH)).data;
     if ("message" in response) {

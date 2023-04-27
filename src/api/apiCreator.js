@@ -1,9 +1,14 @@
-import { AUTH_DEFAULT_LOGIN_PATH, NOTIFICATION_PATH } from "./apiPath";
+import { AUTH_DEFAULT_LOGIN_PATH, NOTIFICATION_PATH } from './';
 
-export function getAuthDefaultLoginQueryCreator(email, password) {
+function getAuthDefaultLoginQueryCreator(email, password) {
   return `${AUTH_DEFAULT_LOGIN_PATH}?email=${email}&auth_key=${password}`;
 }
 
-export function notificationWithIdQueryCreator(id) {
+function notificationWithIdQueryCreator(id) {
   return `${NOTIFICATION_PATH}/${id}`;
+}
+
+export {
+  getAuthDefaultLoginQueryCreator,
+  notificationWithIdQueryCreator,
 }

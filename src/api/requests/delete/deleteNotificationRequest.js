@@ -1,7 +1,6 @@
-import api from "../../apiConfig";
-import { notificationWithIdQueryCreator } from "../../apiCreator";
+import { notificationWithIdQueryCreator, api } from "../../";
 
-export async function deleteNotificationRequest(action) {
+export default async function deleteNotificationRequest(action) {
   try {
     const response = await api.delete(
       notificationWithIdQueryCreator(action.id)

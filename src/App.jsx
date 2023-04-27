@@ -10,7 +10,7 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const { user, alert } = useSelector(userAndUserSelector);
+  const { alert } = useSelector(userAndUserSelector);
 
   useEffect(() => {
     dispatch(requestGetUserWhoAmIActionCreator());

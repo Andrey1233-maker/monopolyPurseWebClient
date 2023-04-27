@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { defaultButtonTypes } from "../../consts";
-import { DefaultButton } from "../DefaultButton/DefaultButton";
+import { DefaultButton } from "../";
 import { setAlertToUserReduxActionCreator } from "../../redux/actions/actionCreators";
 import { alertFullFromUserSelector } from "../../redux/reducers/selectors";
 

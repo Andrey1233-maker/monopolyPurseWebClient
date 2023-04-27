@@ -3,7 +3,7 @@ import {
   setAlertToUserReduxActionCreator,
   requestGetTablesActionCreator,
 } from "../../actions/actionCreators";
-import { postTableRequest } from "../../../api/requests/post/postTableRequest";
+import { postTableRequest } from "../../../api";
 
 export function* workerPostTableSaga(action) {
   try {

@@ -1,3 +1,3 @@
-import NotificationList from "./NotificationList";
+import NotificationListBtn from "./NotificationList";
 
-export default NotificationList;
+export default NotificationListBtn;

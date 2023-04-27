@@ -8,7 +8,7 @@ export default function TableItem({ table, createTable }) {
 
   const onClickCreateBtn = useCallback(() => {
     navigate("/create");
-  }, navigate);
+  }, [navigate]);
 
   const content = useMemo(() => {
     if (createTable) {
@@ -38,7 +38,7 @@ export default function TableItem({ table, createTable }) {
         <input class="block__input" />
       </>
     );
-  }, [table]);
+  }, [table, createTable]);
 
   return (
     <div

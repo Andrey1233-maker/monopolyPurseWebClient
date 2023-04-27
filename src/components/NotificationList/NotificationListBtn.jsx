@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { notificationsFromUserReducerSelector } from "../../redux/reducers/selectors";
 import { requestNotificationsActionCreator } from "../../redux/actions/actionCreators";
 
-export function NotificationListBtn() {
+export default function NotificationListBtn() {
   const dispatch = useDispatch();
 
   const notifications = useSelector(notificationsFromUserReducerSelector);

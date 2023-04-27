@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 
-import { getNotificationsRequest } from "../../../api/requests/get/getNotificationsRequest";
+import { getNotificationsRequest } from "../../../api";
 import {
   setNotificationsActionCreator,
   setAlertToUserReduxActionCreator,

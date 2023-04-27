@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import { postAuthDefaultRegReuest } from "../../../api/requests/post/postAuthDefaultRegReuest";
+import { postAuthDefaultRegReuest } from "../../../api";
 import { setAlertToUserReduxActionCreator } from "../../actions/actionCreators";
 
 export function* workerPostAuthDefaultRegSaga(action) {

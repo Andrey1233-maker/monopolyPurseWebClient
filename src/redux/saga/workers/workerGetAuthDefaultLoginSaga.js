@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import { getAuthDefaultLoginRequest } from "../../../api/requests/get/getAuthDefaltLoginRequest";
+import { getAuthDefaultLoginRequest } from "../../../api";
 import { setToken } from "../../../readToken";
 import {
   setAlertToUserReduxActionCreator,

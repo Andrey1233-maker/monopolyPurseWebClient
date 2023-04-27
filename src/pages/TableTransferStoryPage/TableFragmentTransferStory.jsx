@@ -1,4 +1,4 @@
-import "./TableFragmentTransferStoryPage.styles.css";
+import "./TableTransferStoryPage.styles.css";
 
 export default function TableFragmentTransferStoryPage() {
   return (
