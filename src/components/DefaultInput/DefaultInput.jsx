@@ -1,6 +1,6 @@
 import './defaultInput.styles.css'
 
-export function DefaultInput({title, value, onChange}) {
+export default function DefaultInput({title, value, onChange}) {
 
     return (
         <div class='default_input'>

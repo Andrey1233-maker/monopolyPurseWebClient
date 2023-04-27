@@ -7,7 +7,7 @@ import close_icon from './X.svg'
 import './NotificationList.styles.css'
 
 
-export function NotificationList({notifications, closeForm}) {
+export default function NotificationList({notifications, closeForm}) {
 
     const dispatch = useDispatch()
 

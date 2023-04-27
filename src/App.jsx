@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { MainRouting } from './MainRouting'
 import { requestGetUserWhoAmIActionCreator } from './redux/actions/actionCreators';
-import { alertFromUserReducerSelector, userFromuserReducerSelector } from './redux/reducers/selectors'
+import { userAndUserSelector } from './redux/reducers/selectors'
 
 import './App.css';
 import { NotificationModal } from './components/NotificationModal/NotificationModal';
@@ -12,8 +12,7 @@ import { NotificationModal } from './components/NotificationModal/NotificationMo
 function App() {
 
   const dispatch = useDispatch()
-  const user = useSelector(userFromuserReducerSelector)
-  const alert = useSelector(alertFromUserReducerSelector)
+  const { user, alert } = useSelector(userAndUserSelector)
 
   useEffect(() => {
     dispatch(requestGetUserWhoAmIActionCreator())
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <MainRouting user={user}/>
+      <MainRouting/>
       {alert && <NotificationModal />}
     </div>
   );

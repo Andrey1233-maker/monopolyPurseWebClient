@@ -1,31 +1,35 @@
-import { Route, Routes, BrowserRouter as Router, Navigate  } from "react-router-dom";
-import { AuthPage } from "./pages/AuthPage/AuthPage";
-import { TokenPage } from "./pages/TokenPage/TokenPage";
-import { RegistrationPage } from "./pages/RegistrationPage/RegistrationPage";
-import { TemplatePage } from "./pages/TemplatePage/TemplatePage";
-import { TableListFragment } from "./pages/TableListPage/TableListFragment";
-import { CreateTeamFragment } from "./pages/CreateTeamPage/CreateTeamFragment";
-import { NotFoundPageContent } from "./pages/NotFoundPage/NotFoundPageContent";
-import { TableFragment } from "./pages/TablePage/TableFragment";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { lazy } from 'react';
 
-export function MainRouting({user}) {
+
+const AuthPage = lazy(() => import('./pages/AuthPage/AuthPage'))
+const TokenPage = lazy(() => import('./pages/TokenPage/TokenPage'))
+const RegistrationPage = lazy(() => import('./pages/RegistrationPage/RegistrationPage'))
+const TemplatePage = lazy(() => import('./pages/TemplatePage/TemplatePage'))
+const TableListFragment = lazy(() => import('./pages/TableListPage/TableListFragment'))
+const CreateTeamFragment = lazy(() => import('./pages/CreateTeamPage/CreateTeamFragment'))
+const NotFoundPageContent = lazy(() => import('./pages/NotFoundPage/NotFoundPageContent'))
+const TableFragment = lazy(() => import('./pages/TablePage/TableFragment'))
+const TableFragmentTransferStoryPage = lazy(() => import('./pages/TableTransferStoryPage/TableFragmentTransferStory'))
+
+
+export function MainRouting() {
+
+    const router = createBrowserRouter([
+        { path: '/auth', element: (<AuthPage />) },
+        { path: '/reg', element: (<RegistrationPage />) },
+        { path: '/token/:token', element: (<TokenPage />) },
+        { path: '/', element: (<TemplatePage />), children: [
+            { path: 'table/:id', element: (<TableFragment />), children: [
+                { path: 'transfers', element: (<TableFragmentTransferStoryPage/>) }
+            ] },
+            { path: 'tables', element: (<TableListFragment />) },
+            { path: 'create', element: (<CreateTeamFragment />) },
+            { path: '*', element: (<NotFoundPageContent/>) },
+        ]},        
+    ])
 
     return (
-        <Router>
-            <Routes>
-                <Route path="/auth" element={<AuthPage />}/>
-                <Route path="/reg" element={<RegistrationPage />}/>
-                <Route path="/token/:token" element={<TokenPage />}/>
-                <Route path="/table/:id" element={<TemplatePage content={<TableFragment />}/>}/>
-
-                {user && <>
-                        <Route path="/tables" element={<TemplatePage content={<TableListFragment />} />}/>
-                        <Route path="/create" element={<TemplatePage content={<CreateTeamFragment />} />}/>
-                        <Route path="*" element={<TemplatePage content={<TableListFragment/>}/>}/>
-                    </>
-                }
-                <Route path="*" element={<AuthPage/>}/>
-            </Routes>
-        </Router>
+        <RouterProvider router={router} />
     )
 }

@@ -1,11 +1,10 @@
 import { useCallback, useMemo } from 'react'
-
-import { DefaultInput } from '../DefaultInput/DefaultInput'
-
-import './TableItem.styles.css'
 import { useNavigate } from 'react-router-dom'
 
-export function TableItem({table, createTable}) {
+import './TableItem.styles.css'
+
+
+export default function TableItem({table, createTable}) {
 
     const navigate = useNavigate()
 
@@ -35,7 +34,13 @@ export function TableItem({table, createTable}) {
     }, [table])
 
     return (
-        <div class={`block ${createTable && 'block__create'}`} style={(!createTable && table) ? {background: `${table.style}8f`, border: `3px solid ${table.style}`} : {}} onClick={createTable && onClickCreateBtn}>
+        <div 
+            class={`block ${createTable && 'block__create'}`} 
+            style={(!createTable && table) ? 
+                {background: `${table.style}8f`, border: `3px solid ${table.style}`} : 
+                {}} 
+            onClick={createTable && onClickCreateBtn}
+        >
             {content}
         </div>
     )

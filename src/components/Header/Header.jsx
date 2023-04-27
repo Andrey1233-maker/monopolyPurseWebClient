@@ -11,7 +11,7 @@ import logo from '../../logo.svg'
 import './header.styles.css'
 
 
-export function Header() {
+export default function Header() {
 
     const navigate = useNavigate()
 

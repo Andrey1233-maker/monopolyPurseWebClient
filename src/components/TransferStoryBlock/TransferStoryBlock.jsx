@@ -1,5 +1,5 @@
 
-export function TransferStoryBlock() {
+export default function TransferStoryBlock() {
 
     return (
         <div>

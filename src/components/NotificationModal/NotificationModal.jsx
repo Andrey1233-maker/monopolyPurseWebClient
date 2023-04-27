@@ -9,7 +9,7 @@ import { alertFullFromUserSelector } from '../../redux/reducers/selectors'
 import './notificationModal.styles.css'
 
 
-export function NotificationModal() {
+export default function NotificationModal() {
 
     const dispatch = useDispatch()
 

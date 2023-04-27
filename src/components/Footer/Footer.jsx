@@ -1,6 +1,6 @@
 import './Footer.styles.css'
 
-export function Footer() {
+export default function Footer() {
 
     return (
         <div class="footer">

@@ -1,14 +1,16 @@
-import { TablePageMenu } from "./TablePageMenu";
-import { TableFragmentTransferStory } from './TableFragmentTransferStory'
+import { Outlet } from "react-router-dom"
+
+import { TablePageMenu } from "./TablePageMenu"
 
 import './TablePage.styles.css'
+
 
 export function TableFragment() {
 
     return (
         <div class="table_page_content">
             <TablePageMenu />
-            <TableFragmentTransferStory />
+            <Outlet />
         </div>
     )
 }

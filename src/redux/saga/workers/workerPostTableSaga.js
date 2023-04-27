@@ -5,12 +5,11 @@ import { postTableRequest } from '../../../api/requests/post/postTableRequest'
 
 export function* workerPostTableSaga(action) {
     try {
-        const tables = yield call(postTableRequest, action)
+        yield call(postTableRequest, action)
         yield put(requestGetTablesActionCreator())
         yield put(setAlertToUserReduxActionCreator('Комната создана', false))
-
     }
-    catch(e) {
+    catch(_) {
         yield put(setAlertToUserReduxActionCreator('Не удалось создать комнату', true))
     }
 }

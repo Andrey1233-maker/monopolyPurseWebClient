@@ -1,7 +1,7 @@
-import { Header } from '../../components/Header/Header'
+import { Header } from '../../components'
 import { CreateTeamFragment } from './CreateTeamFragment'
 
-export function CreateTeamPage() {
+export default function CreateTeamPage() {
 
     return (
         <div class="page">

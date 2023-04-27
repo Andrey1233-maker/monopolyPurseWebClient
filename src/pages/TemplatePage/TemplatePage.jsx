@@ -1,14 +1,14 @@
-import { Footer } from '../../components/Footer/Footer'
-import { Header } from '../../components/Header/Header'
+import { Outlet } from 'react-router-dom'
+import { Header, Footer } from '../../components'
 
 import './TemplatePage.styles.css'
 
-export function TemplatePage({content}) {
+export function TemplatePage() {
 
     return (
         <div class="page">
             <Header />
-            {content}
+            <Outlet />
             <Footer />
         </div>
     )

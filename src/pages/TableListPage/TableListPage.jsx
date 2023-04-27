@@ -1,7 +1,7 @@
-import { Header } from '../../components/Header/Header'
+import { Header } from '../../components'
 import { TableListFragment } from './TableListFragment'
 
-export function TableListPage() {
+export default function TableListPage() {
 
     return (
         <div class="page">

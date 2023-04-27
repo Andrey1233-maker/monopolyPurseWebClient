@@ -1,8 +1,7 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux"; 
-import { DefaultButton } from "../../components/DefaultButton/DefaultButton";
-import { DefaultInput } from "../../components/DefaultInput/DefaultInput";
+import { useDispatch } from "react-redux"; 
+import { DefaultInput, DefaultButton } from "../../components";
 import { defaultButtonTypes } from '../../consts'
 import { requestGetAuthDefaultLoginActionCreator } from "../../redux/actions/actionCreators";
 

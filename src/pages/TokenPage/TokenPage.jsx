@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { setToken } from "../../readToken"
 
-export function TokenPage() {
+export default function TokenPage() {
 
     const { token } = useParams()
     const navigate = useNavigate()

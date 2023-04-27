@@ -1,10 +1,10 @@
 
-import { Header } from '../../components/Header/Header'
+import { Header } from '../../components'
 import { NotFoundPageContent } from './NotFoundPageContent'
 
 import './notFoundPage.styles.css'
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
 
     return (
         <div>

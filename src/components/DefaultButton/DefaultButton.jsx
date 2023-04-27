@@ -5,7 +5,7 @@ import { defaultButtonTypes } from '../../consts'
 
 import './defaultButton.styles.css'
 
-export function DefaultButton({title, onClick, type}) {
+export default function DefaultButton({title, onClick, type}) {
 
     const buttonType = useMemo(() => {
         switch(type) {

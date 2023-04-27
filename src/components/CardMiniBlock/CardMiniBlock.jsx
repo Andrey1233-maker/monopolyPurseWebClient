@@ -2,7 +2,7 @@
 import './CardMiniBlock.styles.css'
 
 
-export function CardMiniBlock() {
+export default function CardMiniBlock() {
 
     return (
         <div class="card_block_mini">

@@ -4,7 +4,7 @@ import { TableFragment } from './TableFragment'
 import './TablePage.styles.css'
 
 
-export function TablePage() {
+export default function TablePage() {
 
 
     return (

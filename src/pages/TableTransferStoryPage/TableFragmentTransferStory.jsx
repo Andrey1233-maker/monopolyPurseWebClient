@@ -1,6 +1,7 @@
 
+import './TableFragmentTransferStoryPage.styles.css'
 
-export function TableFragmentTransferStory() {
+export default function TableFragmentTransferStoryPage() {
 
     return (
         <div class="table_page__form">

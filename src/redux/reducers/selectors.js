@@ -17,7 +17,12 @@ export const tablesFromTableReducerSelector = state => tableReducerSelector(stat
 
 // комбинированные селекторы
 
-export const alertFullFromUserSelector = state => ({
+export const alertFullFromUserSelector = (state) => ({
     alert: alertFromUserReducerSelector(state),
     error: alertErrorFromUserReducerSelector(state),
+})
+
+export const userAndUserSelector = (state) => ({
+    alert: alertFromUserReducerSelector(state),
+    user: userReducerSelector(state),
 })
