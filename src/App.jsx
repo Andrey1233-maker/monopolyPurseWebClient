@@ -10,7 +10,7 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const { alert } = useSelector(userAndUserSelector);
+  const { user, alert } = useSelector(userAndUserSelector);
 
   useEffect(() => {
     dispatch(requestGetUserWhoAmIActionCreator());
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <MainRouting />
+      <MainRouting user={user} />
       {alert && <NotificationModal />}
     </div>
   );

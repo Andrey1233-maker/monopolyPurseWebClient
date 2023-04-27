@@ -1,3 +1,3 @@
-import DefaultButton from "../DefaultButton";
+import DefaultInput from "./DefaultInput";
 
-export default DefaultButton;
+export default DefaultInput;

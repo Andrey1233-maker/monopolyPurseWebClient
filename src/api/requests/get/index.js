@@ -4,8 +4,8 @@ import getTablesRequest from "./getTablesRequest";
 import getUserWhoAmIRequest from "./getUserWhoAmIRequest";
 
 export {
-    getAuthDefaultLoginRequest,
-    getNotificationsRequest,
-    getTablesRequest,
-    getUserWhoAmIRequest,
-}
+  getAuthDefaultLoginRequest,
+  getNotificationsRequest,
+  getTablesRequest,
+  getUserWhoAmIRequest,
+};

@@ -1,3 +1,3 @@
 import deleteNotificationRequest from "./deleteNotificationRequest";
 
-export { deleteNotificationRequest }
+export { deleteNotificationRequest };

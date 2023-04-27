@@ -13,7 +13,14 @@ const TableFragmentTransferStoryPage = lazy(() =>
   import("./pages/TableTransferStoryPage")
 );
 
-export function MainRouting() {
+export function MainRouting({ user }) {
+  const unAuthedRouting = createBrowserRouter([
+    { path: "/auth", element: <AuthPage /> },
+    { path: "/reg", element: <RegistrationPage /> },
+    { path: "/token/:token", element: <TokenPage /> },
+    { path: "*", element: <AuthPage /> },
+  ]);
+
   const router = createBrowserRouter([
     { path: "/auth", element: <AuthPage /> },
     { path: "/reg", element: <RegistrationPage /> },
@@ -36,5 +43,5 @@ export function MainRouting() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={user ? router : unAuthedRouting} />;
 }

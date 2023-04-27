@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { DefaultInput, DefaultButton } from "../../components";
-import { defaultButtonTypes } from "../../consts";
+import { defaultButtonTypes, googleAuthLink } from "../../consts";
 import { requestGetAuthDefaultLoginActionCreator } from "../../redux/actions/actionCreators";
 
 export function AuthFragment() {
@@ -27,10 +27,8 @@ export function AuthFragment() {
   );
 
   const onClickAuthBtn = useCallback(() => {
-    window.location.assign(
-      "https://accounts.google.com/o/oauth2/auth?client_id=724831104412-3j4keepifvf6n3jdes2ti455v0ick2lp.apps.googleusercontent.com&redirect_uri=http://localhost:5000/auth/google/callback&access_type=offline&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
-    );
-  }, [emailValue, passwordValue]);
+    window.location.assign(googleAuthLink);
+  }, []);
 
   const onClickDefaultAuthBtn = useCallback(() => {
     dispatch(

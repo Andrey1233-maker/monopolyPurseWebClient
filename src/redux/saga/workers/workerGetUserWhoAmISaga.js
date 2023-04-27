@@ -1,9 +1,7 @@
 import { call, put } from "redux-saga/effects";
 
 import { getUserWhoAmIRequest } from "../../../api";
-import {
-  setUserToUserReduceActionCreator,
-} from "../../actions/actionCreators";
+import { setUserToUserReduceActionCreator } from "../../actions/actionCreators";
 
 export function* workerGetUserWhoAmISaga() {
   try {

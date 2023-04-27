@@ -28,7 +28,7 @@ export default function Header() {
       return (
         <div class="header__user">
           <NotificationListBtn />
-          <img src={user.picture} class="header__avatar" alt='avatar'/>
+          <img src={user.picture} class="header__avatar" alt="avatar" />
           <div class="header__user_names">
             <p class="user__name">{user.name}</p>
             <p class="user__email">{user.email}</p>
@@ -47,7 +47,7 @@ export default function Header() {
   return (
     <div class="header">
       <div class="header__title">
-        <img class="header__logo" src={logo} alt='logo'/>
+        <img class="header__logo" src={logo} alt="logo" />
         <p>Кошелёк монополии</p>
       </div>
       {userContent}
