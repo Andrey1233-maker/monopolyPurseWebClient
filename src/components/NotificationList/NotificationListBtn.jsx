@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { NotificationList } from "./NotificationList";
+import NotificationList from "./NotificationList";
 
 import bell_icon from "./Bell.svg";
 
-import "./NotificationList.styles.css";
-import { useDispatch, useSelector } from "react-redux";
 import { notificationsFromUserReducerSelector } from "../../redux/reducers/selectors";
 import { requestNotificationsActionCreator } from "../../redux/actions/actionCreators";
+
+import "./NotificationList.styles.css";
 
 export default function NotificationListBtn() {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ export default function NotificationListBtn() {
       </div>
       {formIsOpen && (
         <NotificationList
-          notifications={notifications}
+          notifications={notifications ?? []}
           closeForm={onClickBtn}
         />
       )}

@@ -25,10 +25,10 @@ export default function NotificationList({ notifications, closeForm }) {
         onClick={closeForm}
       />
       <p class="notification_list__form__title">
-        У вас <span class="form__title__bold">{notifications.length}</span>{" "}
+        У вас <span class="form__title__bold">{notifications?.length}</span>{" "}
         уведомлений
       </p>
-      {notifications.map((notification) => (
+      {notifications?.map((notification) => (
         <div class="notificaton_list__item">
           <p class="item__text">{notification.content}</p>
           <img

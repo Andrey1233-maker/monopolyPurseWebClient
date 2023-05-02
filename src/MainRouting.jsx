@@ -7,7 +7,6 @@ const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
 const TemplatePage = lazy(() => import("./pages/TemplatePage"));
 const TableListFragment = lazy(() => import("./pages/TableListPage"));
 const CreateTeamFragment = lazy(() => import("./pages/CreateTeamPage"));
-const NotFoundPageContent = lazy(() => import("./pages/NotFoundPage"));
 const TableFragment = lazy(() => import("./pages/TablePage"));
 const TableFragmentTransferStoryPage = lazy(() =>
   import("./pages/TableTransferStoryPage")
@@ -38,7 +37,7 @@ export function MainRouting({ user }) {
         },
         { path: "tables", element: <TableListFragment /> },
         { path: "create", element: <CreateTeamFragment /> },
-        { path: "*", element: <NotFoundPageContent /> },
+        { path: "*", element: <TableListFragment /> },
       ],
     },
   ]);
