@@ -10,6 +10,8 @@ import {
   SET_TABLES_TO_TABLES_REDUCER_ACTION,
   REQUEST_POST_TABLE_ACTION,
   REQUEST_GET_TABLES_ACTION,
+  SET_SELECTED_TABLE_TO_TABLE_REDUCER_ACTION,
+  REQUEST_TABLE_BY_ID_ACTION,
 } from "./actionTypes";
 
 export function requestGetAuthDefaultLoginActionCreator(email, auth_key) {
@@ -90,4 +92,18 @@ export function requestGetTablesActionCreator() {
   return {
     type: REQUEST_GET_TABLES_ACTION,
   };
+}
+
+export function setTableToTableReducerActionCreator(table) {
+  return {
+    type: SET_SELECTED_TABLE_TO_TABLE_REDUCER_ACTION,
+    table,
+  }
+}
+
+export function requestTableByIdActionCreator(id) {
+  return {
+    type: REQUEST_TABLE_BY_ID_ACTION,
+    id,
+  }
 }

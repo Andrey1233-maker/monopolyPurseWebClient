@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { NotificationModal } from "./components";
@@ -18,8 +18,10 @@ function App() {
 
   return (
     <div className="App">
-      <MainRouting user={user} />
-      {alert && <NotificationModal />}
+      <Suspense fallback={<>Loading...</>}>
+        <MainRouting user={user} />
+        {alert && <NotificationModal />}
+      </Suspense>
     </div>
   );
 }

@@ -11,6 +11,7 @@ const TableFragment = lazy(() => import("./pages/TablePage"));
 const TableFragmentTransferStoryPage = lazy(() =>
   import("./pages/TableTransferStoryPage")
 );
+const TableInfoPage = lazy(() => import("./pages/TableInfoPage"))
 
 export function MainRouting({ user }) {
   const unAuthedRouting = createBrowserRouter([
@@ -32,7 +33,9 @@ export function MainRouting({ user }) {
           path: "table/:id",
           element: <TableFragment />,
           children: [
+            { path: "", element: <TableInfoPage/>},
             { path: "transfers", element: <TableFragmentTransferStoryPage /> },
+            { path: "*", element: <TableFragmentTransferStoryPage /> },
           ],
         },
         { path: "tables", element: <TableListFragment /> },

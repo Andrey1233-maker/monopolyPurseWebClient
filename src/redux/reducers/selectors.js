@@ -3,6 +3,8 @@ export const userReducerSelector = (state) => state.userReducer;
 
 export const tableReducerSelector = (state) => state.tableReducer;
 
+export const  tableInfoReducerSelector = (state) => state.tableInfoReducer;
+
 // селектроря для конкретных полей
 export const userFromuserReducerSelector = (state) =>
   userReducerSelector(state).user;
@@ -18,6 +20,9 @@ export const alertErrorFromUserReducerSelector = (state) =>
 
 export const tablesFromTableReducerSelector = (state) =>
   tableReducerSelector(state).tables;
+
+export const tableFromTableInfoReducerSelector = (state) =>
+  tableInfoReducerSelector(state).table
 
 // комбинированные селекторы
 

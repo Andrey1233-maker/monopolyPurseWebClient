@@ -2,6 +2,7 @@ import { useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import { getProfilePictureByUser } from '../../utils'
 import { BorderButton, NotificationListBtn } from "../";
 import { userFromuserReducerSelector } from "../../redux/reducers/selectors";
 
@@ -28,7 +29,7 @@ export default function Header() {
       return (
         <div class="header__user">
           <NotificationListBtn />
-          <img src={user.picture} class="header__avatar" alt="avatar" />
+          <img src={getProfilePictureByUser(user)} class="header__avatar" alt="avatar" />
           <div class="header__user_names">
             <p class="user__name">{user.name}</p>
             <p class="user__email">{user.email}</p>

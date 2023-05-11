@@ -10,6 +10,18 @@ export default function TableItem({ table, createTable }) {
     navigate("/create");
   }, [navigate]);
 
+  const onClickDefaultBlock = useCallback(() => {
+    navigate(`/table/${table.id}`)
+  }, [navigate, table])
+
+  const onClickBlock = useMemo(() => {
+    if(createTable) {
+      return onClickCreateBtn
+    }
+
+    return onClickDefaultBlock
+  }, [createTable, onClickCreateBtn, onClickDefaultBlock])
+
   const content = useMemo(() => {
     if (createTable) {
       return (
@@ -51,7 +63,7 @@ export default function TableItem({ table, createTable }) {
             }
           : {}
       }
-      onClick={createTable && onClickCreateBtn}
+      onClick={onClickBlock}
     >
       {content}
     </div>

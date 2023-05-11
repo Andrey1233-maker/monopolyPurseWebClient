@@ -7,6 +7,7 @@ import {
   REQUEST_POST_AUTH_DEFAULT_REG_ACTION,
   REQUEST_DELETE_NOTIFICATION_ACTION,
   REQUEST_GET_TABLES_ACTION,
+  REQUEST_TABLE_BY_ID_ACTION,
 } from "../actions/actionTypes";
 import { workerGetAuthDefaultLoginSaga } from "./workers/workerGetAuthDefaultLoginSaga";
 import { workerGetUserWhoAmISaga } from "./workers/workerGetUserWhoAmISaga";
@@ -15,6 +16,7 @@ import { workerGetNotificationsSaga } from "./workers/workerGetNotificationsSaga
 import { workerDeleteNotificationSaga } from "./workers/workerDeleteNotificationSaga";
 import { workerGetTablesSaga } from "./workers/workerGetTablesSaga";
 import { workerPostTableSaga } from "./workers/workerPostTableSaga";
+import { workerGetTableByIdSaga } from './workers/workerGetTableByIdSaga';
 
 export function* saga() {
   yield all([
@@ -31,5 +33,6 @@ export function* saga() {
     takeEvery(REQUEST_DELETE_NOTIFICATION_ACTION, workerDeleteNotificationSaga),
     takeEvery(REQUEST_GET_TABLES_ACTION, workerGetTablesSaga),
     takeEvery(REQUEST_POST_TABLE_ACTION, workerPostTableSaga),
+    takeEvery(REQUEST_TABLE_BY_ID_ACTION, workerGetTableByIdSaga),
   ]);
 }
