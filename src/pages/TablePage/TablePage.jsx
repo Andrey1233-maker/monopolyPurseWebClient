@@ -1,6 +1,7 @@
 import { TableFragment } from "./TableFragment";
 
-import "./TablePage.styles.css";
+import styles from "./TablePage.module.css"
+
 
 export default function TablePage() {
   return (

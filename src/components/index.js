@@ -8,6 +8,7 @@ import NotificationListBtn from "./NotificationList";
 import NotificationModal from "./NotificationModal";
 import TableItem from "./TableItem";
 import TransferStoryBlock from "./TransferStoryBlock/TransferStoryBlock";
+import CardBlock from "./CardBlock/CardBlock";
 
 export {
   BorderButton,
@@ -20,4 +21,5 @@ export {
   NotificationModal,
   TableItem,
   TransferStoryBlock,
+  CardBlock,
 };

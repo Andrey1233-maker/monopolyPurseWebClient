@@ -12,8 +12,10 @@ const TableFragmentTransferStoryPage = lazy(() =>
   import("./pages/TableTransferStoryPage")
 );
 const TableInfoPage = lazy(() => import("./pages/TableInfoPage"))
+const TableCardsPage = lazy(() => import("./pages/TableCardsPage"))
+const TableTransferPage = lazy(() => import("./pages/TableTransferPage"))
 
-export function MainRouting({ user }) {
+export function MainRouting({ token }) {
   const unAuthedRouting = createBrowserRouter([
     { path: "/auth", element: <AuthPage /> },
     { path: "/reg", element: <RegistrationPage /> },
@@ -22,8 +24,6 @@ export function MainRouting({ user }) {
   ]);
 
   const router = createBrowserRouter([
-    { path: "/auth", element: <AuthPage /> },
-    { path: "/reg", element: <RegistrationPage /> },
     { path: "/token/:token", element: <TokenPage /> },
     {
       path: "/",
@@ -35,6 +35,8 @@ export function MainRouting({ user }) {
           children: [
             { path: "", element: <TableInfoPage/>},
             { path: "transfers", element: <TableFragmentTransferStoryPage /> },
+            { path: "wallets", element: <TableCardsPage /> },
+            { path: "transaction", element: <TableTransferPage /> },
             { path: "*", element: <TableFragmentTransferStoryPage /> },
           ],
         },
@@ -45,5 +47,5 @@ export function MainRouting({ user }) {
     },
   ]);
 
-  return <RouterProvider router={user ? router : unAuthedRouting} />;
+  return <RouterProvider router={token ? router : unAuthedRouting} />;
 }

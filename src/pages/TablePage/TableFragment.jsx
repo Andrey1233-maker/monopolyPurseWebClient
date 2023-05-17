@@ -6,7 +6,7 @@ import { requestTableByIdActionCreator } from './../../redux/actions/actionCreat
 
 import { TablePageMenu } from "./TablePageMenu";
 
-import "./TablePage.styles.css";
+import styles from "./TablePage.module.css";
 
 export function TableFragment() {
   
@@ -18,8 +18,8 @@ export function TableFragment() {
   }, [id, dispatch])
 
   return (
-    <div class="table_page_content">
-      <TablePageMenu />
+    <div className={styles.table_page_content}>
+      <TablePageMenu tableId={id}/>
       <Outlet />
     </div>
   );

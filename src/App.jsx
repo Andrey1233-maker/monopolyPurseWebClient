@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { NotificationModal } from "./components";
@@ -7,10 +7,14 @@ import { requestGetUserWhoAmIActionCreator } from "./redux/actions/actionCreator
 import { userAndUserSelector } from "./redux/reducers/selectors";
 
 import "./App.css";
+import { readToken } from "./readToken";
 
 function App() {
   const dispatch = useDispatch();
   const { user, alert } = useSelector(userAndUserSelector);
+  const token = useMemo(() => {
+    return readToken()
+  }, [user])
 
   useEffect(() => {
     dispatch(requestGetUserWhoAmIActionCreator());
@@ -19,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Suspense fallback={<>Loading...</>}>
-        <MainRouting user={user} />
+        <MainRouting token={token} />
         {alert && <NotificationModal />}
       </Suspense>
     </div>
